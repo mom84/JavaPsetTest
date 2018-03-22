@@ -14,10 +14,11 @@ class SummaryReporterTest {
 
     Airport airport = new Airport();
     LuggageParser luggageParser = new LuggageParser();
+
     List<Luggage> departureLuggage = luggageParser.asList("src\\main\\java\\at\\refugeescode\\JavaPsetTest\\pset4\\data\\luggage");
+
     List<Luggage> arrivalLuggage = airport.travel(departureLuggage);
     List<Luggage> notarrivalLuggage = airport.NotTravel(departureLuggage);
-
 
     @Test
     void reportRejected() {

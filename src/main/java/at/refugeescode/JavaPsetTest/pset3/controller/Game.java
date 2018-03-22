@@ -23,7 +23,8 @@ public class Game {
                 Move move1 = player.chooseOneMove(moves);
                 Move move2 = computer.chooseOneMove(moves);
                 Jury jury = new Jury();
-                jury.sayResult(move1, move2);
+                String result = jury.sayResult(move1, move2);
+                System.out.println(result);
                 Scanner scan = new Scanner(System.in);
                 System.out.println("Do you want to play again? (y/n): y" );
                 String s = scan.nextLine().toUpperCase();

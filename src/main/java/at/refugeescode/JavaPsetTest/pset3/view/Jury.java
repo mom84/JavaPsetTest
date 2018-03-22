@@ -5,19 +5,19 @@ import at.refugeescode.JavaPsetTest.pset3.model.Move;
 
 public class Jury {
 
-    public void sayResult(Move move1, Move move2) {
+    public String sayResult(Move move1, Move move2) {
 
         if(move1.wins(move2)){
-            System.out.println("\nPlayer1 Win"+ "\n" + "Player1 move"+ " " + move1.getName() + " " + " ,ComputerPlayer move"+ " " + move2.getName());
-            System.out.println();
+            //return "\nPlayer1 Win"+ "\n" + "Player1 move"+ " " + move1.getName() + " " + " ,ComputerPlayer move"+ " " + move2.getName();
+              return "Player1 Win";
         }
         else if(move2.wins(move1)){
-            System.out.println("\nComputerPlayer Win"+ "\n" + "Player1 move"+ " " + move1.getName() + " " + " ,ComputerPlayer move"+ " " + move2.getName());
-            System.out.println();
+            //return "\nComputerPlayer Win"+ "\n" + "Player1 move"+ " " + move1.getName() + " " + " ,ComputerPlayer move"+ " " + move2.getName();
+            return "Player2 Win";
         }
         else{
-            System.out.println("\nNo Body Win, It is Tie"+ "\n" + "Player1 move"+ " " + move1.getName() + " " + " ,ComputerPlayer move"+ " " + move2.getName());
-            System.out.println();
+           //return "\nNo Body Win, It is Tie"+ "\n" + "Player1 move"+ " " + move1.getName() + " " + " ,ComputerPlayer move"+ " " + move2.getName();
+           return "No Body Win";
         }
 
     }
