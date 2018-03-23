@@ -2,13 +2,14 @@ package at.refugeescode.JavaPsetTest.pset1.controller;
 import at.refugeescode.JavaPsetTest.pset1.model.Actor;
 import at.refugeescode.JavaPsetTest.pset1.model.Movie;
 import at.refugeescode.JavaPsetTest.pset1.model.Summary;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
-
 import static java.util.stream.Collectors.counting;
 
+@Component
 public class MovieDatabaseSummarizer {
 
     public Summary summarize(List<Movie> movies , List<Actor> actors) {
@@ -23,7 +24,7 @@ public class MovieDatabaseSummarizer {
 
         ////////////////////////////////////////////////////////////////////////
 
-        // The 2 most appearing movie genres (top to bottom)
+        //The 2 most appearing movie genres (top to bottom)
         Map<String, Long> appearances = movies.stream()
                 .filter(e -> e.getGenre().size() != 0)
                 .map(movie -> movie.getGenre())

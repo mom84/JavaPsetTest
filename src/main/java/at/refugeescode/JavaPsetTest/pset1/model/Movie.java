@@ -1,6 +1,9 @@
 package at.refugeescode.JavaPsetTest.pset1.model;
 
+import org.springframework.stereotype.Component;
+
 import java.util.List;
+
 
 public class Movie {
 

@@ -1,5 +1,6 @@
 package at.refugeescode.JavaPsetTest.pset1.parser;
 import at.refugeescode.JavaPsetTest.pset1.model.Actor;
+import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -11,10 +12,10 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 
-
+@Component
 public class ActorParser {
     public List<Actor> getActors() {
-        String filePath = "src/oop/pset1/data/actors.csv";
+        String filePath = "src\\main\\java\\at\\refugeescode\\JavaPsetTest\\pset1\\data\\actors.csv";
         try {
             Stream<String> lines = Files.lines(Paths.get(filePath));
             return lines.skip(1)

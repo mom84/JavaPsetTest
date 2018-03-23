@@ -1,6 +1,8 @@
 package at.refugeescode.JavaPsetTest.pset1.model;
-import java.util.List;
+import org.springframework.stereotype.Component;
 
+import java.util.List;
+@Component
 public class Actor {
 
         private List<String> Actorsnames;

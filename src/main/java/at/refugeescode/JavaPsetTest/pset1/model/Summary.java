@@ -1,8 +1,11 @@
 package at.refugeescode.JavaPsetTest.pset1.model;
 
+import org.springframework.stereotype.Component;
+
 import java.util.List;
 import java.util.Map;
 
+@Component
 public class Summary {
 
     private List<String> topRatedMovies;

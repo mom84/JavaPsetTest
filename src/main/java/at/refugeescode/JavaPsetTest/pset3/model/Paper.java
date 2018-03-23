@@ -2,8 +2,10 @@ package at.refugeescode.JavaPsetTest.pset3.model;
 
 public class Paper implements Move {
 
+
     @Override
     public String getName() {
+
         return "Paper";
     }
 
