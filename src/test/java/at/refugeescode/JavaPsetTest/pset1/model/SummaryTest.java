@@ -1,19 +1,16 @@
 package at.refugeescode.JavaPsetTest.pset1.model;
+
 import at.refugeescode.JavaPsetTest.pset1.controller.MovieDatabaseSummarizer;
 import at.refugeescode.JavaPsetTest.pset1.parser.ActorParser;
 import at.refugeescode.JavaPsetTest.pset1.parser.MovieParser;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
 import java.util.Arrays;
 import java.util.List;
 
-@ExtendWith(SpringExtension.class)
-@SpringBootTest
+import static org.junit.Assert.*;
 
-class SummaryTest {
+ class SummaryTest {
 
     private MovieParser parserMovie;
     private List<Movie> movies;
@@ -22,17 +19,18 @@ class SummaryTest {
     private MovieDatabaseSummarizer summarizer;
     private Summary summary;
 
-    SummaryTest(){
+    public SummaryTest(){
         parserMovie=new MovieParser();
         parserActor = new ActorParser();
-        summarizer=new MovieDatabaseSummarizer();
-        summary=summarizer.summarize(movies , actors);
         movies= parserMovie.getMovies();
         actors=parserActor.getActors();
+        summarizer=new MovieDatabaseSummarizer();
+        summary=summarizer.summarize(movies , actors);
+
     }
 
     @Test
-    void getTopRatedMovies() {
+     void getTopRatedMovies() {
         List<String> topRatedMovies = summary.getTopRatedMovies();
         assertEquals(Arrays.asList("Reckless (10.0)",
                 "Girl in the Cadillac (10.0)",
@@ -42,7 +40,7 @@ class SummaryTest {
     }
 
     @Test
-    void getTopHiredActors() {
+     void getTopHiredActors() {
         List<String> topHiredActors = summary.getTopHiredActors();
         assertEquals(Arrays.asList("Bess Flowers 82 times","Christopher Lee 69 times","Grey Griffin 59 times","Danny Trejo 54 times","Eric Roberts 52 times"),topHiredActors);
 
@@ -56,7 +54,7 @@ class SummaryTest {
 
 
     @Test
-    public void PercentOfMaleAndPercentOfFemale(){
+     void PercentOfMaleAndPercentOfFemale(){
         Float actorsFemaleRatio = summary.getActorsFemaleRatio();
         Float actorsMaleRatio = summary.getActorsMaleRatio();
         assertEquals("65.72689" , String.valueOf(actorsFemaleRatio));
